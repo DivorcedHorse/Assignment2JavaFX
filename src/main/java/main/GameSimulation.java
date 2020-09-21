@@ -1,24 +1,28 @@
 package main;
 
 public class GameSimulation {
-    StringBuffer stringBuffer = new StringBuffer();
 
     public String playWARVariationOne() {
+        StringBuffer stringBuffer = new StringBuffer();
+
         main.WarVariationOne testOne = new main.WarVariationOne();
         String[] test = {"Daniel", "Hao"};
         testOne.setUpCardsAndPlayers(test);
-        testOne.playGame(testOne.listOfPlayers);
+
+        stringBuffer = testOne.playGame(testOne.listOfPlayers);
         testOne.checkWinner();
 
         return stringBuffer.toString();
     }
 
     public String playWARVariationTwo() {
+        StringBuffer stringBuffer = new StringBuffer();
+
         String[] test = {"Daniel", "Hao"};
         main.GameSimulationTwo testTwo = new main.GameSimulationTwo();
 
         testTwo.setUpCardsAndPlayers(test);
-        testTwo.playGame(testTwo.listOfPlayers);
+        stringBuffer = testTwo.playGame(testTwo.listOfPlayers);
 
         testTwo.checkWinner();
         return stringBuffer.toString();
@@ -27,6 +31,8 @@ public class GameSimulation {
 
         //SETUP FOR SECOND VARIATION
         public String playWARVariationThree() {
+            StringBuffer stringBuffer = new StringBuffer();
+
             WarVariationThree testThree = new WarVariationThree();
             String[] test = {"Daniel", "HAO", "Rob"};
 

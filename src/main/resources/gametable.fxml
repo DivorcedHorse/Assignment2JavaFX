@@ -7,8 +7,8 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <Button fx:id="playWar" mnemonicParsing="false" onAction="#playWar" text="Start Game" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
+      <Button fx:id="playWar" mnemonicParsing="false" onAction="#playWar" text="WAR ONE" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
             <Insets top="5.0" />
          </BorderPane.margin></Button>
    </bottom>

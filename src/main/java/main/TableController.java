@@ -11,9 +11,9 @@ public class TableController {
     private TextArea gameOutput;
 
     @FXML
-    private Button playButtonOne;
+    private Button playWar;
     @FXML
-    private Button playButtonTwo;
+    private Button playWar2;
     @FXML
     private Button playButtonThree;
 
@@ -24,7 +24,7 @@ public class TableController {
     }
 
     @FXML
-    void playWarOne(ActionEvent event) {
+    void playWar(ActionEvent event) {
         GameSimulation gameSimulation = new GameSimulation();
 
         String newText;
@@ -34,8 +34,9 @@ public class TableController {
         // TODO: play a game of War (i.e., until someone wins or there is a tie)
     }
 
+
     @FXML
-    void playWarTwo(ActionEvent event) {
+    void playWar2(ActionEvent event) {
         GameSimulation gameSimulation = new GameSimulation();
 
         String newText;
@@ -45,6 +46,7 @@ public class TableController {
         // TODO: play a game of War (i.e., until someone wins or there is a tie)
     }
 
+    /*
     @FXML
     void playWarThree(ActionEvent event) {
         GameSimulation gameSimulation = new GameSimulation();
@@ -55,7 +57,7 @@ public class TableController {
         gameOutput.setText(newText);
         // TODO: play a game of War (i.e., until someone wins or there is a tie)
     }
-
+*/
     @FXML
     public void initialize() {
         // TODO: if you need to do some GUI init, do it here

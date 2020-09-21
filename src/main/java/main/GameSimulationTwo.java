@@ -29,14 +29,15 @@ public class GameSimulationTwo extends GameVariation {
             }
 
             if (roundResult == 1){
-                gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points");
-                gameOutput.append("Hao has " + player2.playerPoints.deck.size() + " points");
+                gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points\n");
+                gameOutput.append("Hao has " + player2.playerPoints.deck.size() + " points\n");
             }
 
             if(roundResult == 2){
-                gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points");
-                gameOutput.append("Hao has " + player2.playerPoints.deck.size() + " points");
+                gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points\n");
+                gameOutput.append("Hao has " + player2.playerPoints.deck.size() + " points\n");
             }
+            gameOutput.append("\n");
         }
         return gameOutput;
     }
@@ -49,8 +50,8 @@ public class GameSimulationTwo extends GameVariation {
         middleDeck.addCard(player1Card);
         middleDeck.addCard(player2Card);
 
-        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() );
-        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() );
+        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() + "\n" );
+        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() + "\n");
 
         if(player1Card.getCardRank() > player2Card.getCardRank()){
             gameOutput.append(player1.getPlayerName() + " Wins the round\n");
@@ -73,13 +74,13 @@ public class GameSimulationTwo extends GameVariation {
         Player player2 = listOfPlayers.get(1);
 
         if (player1.playerPoints.deck.size() > player2.playerPoints.deck.size()){
-            gameOutput.append(player1.getPlayerName() + " has won by " + player1.playerPoints.deck.size());
+            gameOutput.append(player1.getPlayerName() + " has won by " + player1.playerPoints.deck.size()+ "\n");
         }
         else if(player1.playerPoints.deck.size() < player2.playerPoints.deck.size()) {
-            gameOutput.append(player2.getPlayerName() + " has won by " + player2.playerPoints.deck.size());
+            gameOutput.append(player2.getPlayerName() + " has won by " + player2.playerPoints.deck.size()+ "\n");
         }
         else{
-            gameOutput.append("Its a tie!");
+            gameOutput.append("Its a tie!\n");
         }
     }
 

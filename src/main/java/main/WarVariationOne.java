@@ -31,15 +31,17 @@ public class WarVariationOne extends GameVariation {
 
             if (roundResult == 1){
                 player1.collectWinnings(middleDeck);
-                gameOutput.append("Daniel has " + player1.playerHand.deck.size() + " cards");
-                gameOutput.append("Hao has " + player2.playerHand.deck.size() + " cards");
+                gameOutput.append("Daniel has " + player1.playerHand.deck.size() + " cards\n");
+                gameOutput.append("Hao has " + player2.playerHand.deck.size() + " cards\n");
             }
 
             if(roundResult == 2){
                 player2.collectWinnings(middleDeck);
-                gameOutput.append("Daniel has " + player1.playerHand.deck.size() + " cards");
-                gameOutput.append("Hao has " + player2.playerHand.deck.size() + " cards");
+                gameOutput.append("Daniel has " + player1.playerHand.deck.size() + " cards\n");
+                gameOutput.append("Hao has " + player2.playerHand.deck.size() + " cards\n");
             }
+
+            gameOutput.append("\n");
         }
         return gameOutput;
     }
@@ -52,8 +54,8 @@ public class WarVariationOne extends GameVariation {
         middleDeck.addCard(player1Card);
         middleDeck.addCard(player2Card);
 
-        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() );
-        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() );
+        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() + "\n");
+        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() + "\n");
 
         if(player1Card.getCardRank() > player2Card.getCardRank()){
             gameOutput.append(player1.getPlayerName() + " Wins the round\n");
@@ -76,9 +78,9 @@ public class WarVariationOne extends GameVariation {
         Player player2 = listOfPlayers.get(1);
 
         if (player1.checkForEmptyHand()) {
-            gameOutput.append(player2.getPlayerName() + " has won!");
+            gameOutput.append(player2.getPlayerName() + " has won!\n");
         }
         else
-            gameOutput.append(player1.getPlayerName() + " has won!");
+            gameOutput.append(player1.getPlayerName() + " has won!\n");
     }
 }
