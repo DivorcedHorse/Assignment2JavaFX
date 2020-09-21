@@ -10,6 +10,7 @@ public class Main extends Application {
 
     public static void main(String [] args) {
         launch(args);
+        WarVariationOne test = new WarVariationOne();
     }
 
     public void start(Stage stage) throws Exception {

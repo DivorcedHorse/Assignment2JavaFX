@@ -1,8 +1,10 @@
+package main;
+
 import java.util.Stack;
 public class Deck {
     Stack<Card> deck;
 
-    // Had to include a Deck constructor b/c splitDeck needed to
+    // Had to include a main.Deck constructor b/c splitDeck needed to
     // create a fresh new stack for each player....in main the builder
     // did all the work
     public Deck() {

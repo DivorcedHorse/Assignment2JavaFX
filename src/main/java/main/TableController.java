@@ -11,15 +11,48 @@ public class TableController {
     private TextArea gameOutput;
 
     @FXML
-    private Button playWar;
+    private Button playButtonOne;
+    @FXML
+    private Button playButtonTwo;
+    @FXML
+    private Button playButtonThree;
+
+    WarVariationOne test = new WarVariationOne();
 
 
     public TableController() {
     }
 
     @FXML
-    void playWar(ActionEvent event) {
-        System.out.println("Hey, you pressed a button!");
+    void playWarOne(ActionEvent event) {
+        GameSimulation gameSimulation = new GameSimulation();
+
+        String newText;
+        newText = gameSimulation.playWARVariationOne();
+
+        gameOutput.setText(newText);
+        // TODO: play a game of War (i.e., until someone wins or there is a tie)
+    }
+
+    @FXML
+    void playWarTwo(ActionEvent event) {
+        GameSimulation gameSimulation = new GameSimulation();
+
+        String newText;
+        newText = gameSimulation.playWARVariationTwo();
+
+        gameOutput.setText(newText);
+        // TODO: play a game of War (i.e., until someone wins or there is a tie)
+    }
+
+    @FXML
+    void playWarThree(ActionEvent event) {
+        GameSimulation gameSimulation = new GameSimulation();
+
+        String newText;
+        newText = gameSimulation.playWARVariationThree();
+
+        gameOutput.setText(newText);
         // TODO: play a game of War (i.e., until someone wins or there is a tie)
     }
 

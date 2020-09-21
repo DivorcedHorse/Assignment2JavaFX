@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Stack;
 public class DeckCreator {
     String[] cardSuit = {"SPADES", "CLUBS", "DIAMONDS", "HEARTS"};
