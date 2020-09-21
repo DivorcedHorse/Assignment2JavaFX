@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,7 +19,7 @@ public abstract class GameVariation {
         listOfPlayers = createPlayers(playerCards, players);
     }
 
-    public abstract void playGame(ArrayList<Player> players);
+    public abstract StringBuffer playGame(ArrayList<Player> players);
 
     public abstract void checkWinner();
 

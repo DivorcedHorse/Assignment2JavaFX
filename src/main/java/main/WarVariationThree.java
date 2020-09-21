@@ -1,10 +1,13 @@
+package main;
+
 import java.util.ArrayList;
 
 public class WarVariationThree extends GameVariation {
 
     static final Deck middleDeck = new Deck();
+    StringBuffer gameOutput = new StringBuffer();
 
-    public void playGame(ArrayList<Player> players) {
+    public StringBuffer playGame(ArrayList<Player> players) {
         Player player1 = players.get(0);
         Player player2 = players.get(1);
         Player player3 = players.get(2);
@@ -20,7 +23,7 @@ public class WarVariationThree extends GameVariation {
 
                 if(player1.playerHand.checkIfDeckEmpty() || player2.playerHand.checkIfDeckEmpty() ||
                         player3.playerHand.checkIfDeckEmpty())
-                    return;
+                    return gameOutput;
 
                 middleDeck.addCard(player1.playTopCard());
                 middleDeck.addCard(player2.playTopCard());
@@ -29,28 +32,30 @@ public class WarVariationThree extends GameVariation {
             }
 
             if (roundResult == 1){
-                System.out.println(player1.getPlayerName() + " Wins the round \n");
+                gameOutput.append(player1.getPlayerName() + " Wins the round \n");
                 player1.addPoints(middleDeck);
             }
 
             if(roundResult == 2){
-                System.out.println(player2.getPlayerName() + " Wins the round\n");
+                gameOutput.append(player2.getPlayerName() + " Wins the round\n");
                 player2.addPoints(middleDeck);
             }
 
             if (roundResult == 3) {
-                System.out.println(player3.getPlayerName() + " Wins the round\n");
+                gameOutput.append(player3.getPlayerName() + " Wins the round\n");
                 player3.addPoints(middleDeck);
             }
 
-            System.out.println("Daniel has " + player1.playerPoints.deck.size() + " points");
-            System.out.println("HAO has " + player2.playerPoints.deck.size() + " points");
-            System.out.println("Rob has " + player3.playerPoints.deck.size() + " points");
+            gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points\n");
+            gameOutput.append("HAO has " + player2.playerPoints.deck.size() + " points\n");
+            gameOutput.append("Rob has " + player3.playerPoints.deck.size() + " points\n");
+            gameOutput.append("\n");
 
         }
+        return gameOutput;
     }
 
-    private static int compareCards(Player player1, Player player2, Player player3) {
+    private int compareCards(Player player1, Player player2, Player player3) {
         Card player1Card;
         Card player2Card;
         Card player3Card;
@@ -63,9 +68,9 @@ public class WarVariationThree extends GameVariation {
         middleDeck.addCard(player2Card);
         middleDeck.addCard(player3Card);
 
-        System.out.println(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() );
-        System.out.println(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() );
-        System.out.println(player3.getPlayerName() + " plays " + player3Card.getCardName() + " of " + player3Card.getCardSuit() );
+        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() + "\n");
+        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() + "\n");
+        gameOutput.append(player3.getPlayerName() + " plays " + player3Card.getCardName() + " of " + player3Card.getCardSuit() + "\n");
 
         if(player1Card.getCardRank() > player2Card.getCardRank() && player1Card.getCardRank() > player3Card.getCardRank()){
             return 1;
@@ -86,9 +91,9 @@ public class WarVariationThree extends GameVariation {
         Player player2 = listOfPlayers.get(1);
         Player player3 = listOfPlayers.get(2);
 
-        System.out.println("Daniel had " + player1.playerPoints.deck.size() + " points!");
-        System.out.println("Hao had " + player2.playerPoints.deck.size() + " points!");
-        System.out.println("Rob had " + player3.playerPoints.deck.size() + " points!");
+        gameOutput.append("Daniel had " + player1.playerPoints.deck.size() + " points!\n");
+        gameOutput.append("Hao had " + player2.playerPoints.deck.size() + " points!\n");
+        gameOutput.append("Rob had " + player3.playerPoints.deck.size() + " points!\n");
 
     }
 }
