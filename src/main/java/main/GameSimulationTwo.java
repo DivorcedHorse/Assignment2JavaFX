@@ -22,31 +22,34 @@ public class GameSimulationTwo extends GameVariation {
                 if(player1.playerHand.checkIfDeckEmpty() || player2.playerHand.checkIfDeckEmpty())
                     return gameOutput;
 
+                gameOutput.append("*** WAR!!! ***\n");
                 middleDeck.addCard(player1.playTopCard());
                 middleDeck.addCard(player2.playTopCard());
 
-                playGame(players);
+                //playGame(players);
+                continue;
             }
 
             if (roundResult == 1){
-                gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points\n");
-                gameOutput.append("Hao has " + player2.playerPoints.deck.size() + " points\n");
+                gameOutput.append(player1.getPlayerName() + " Wins the round\n");
+                player1.addPoints(middleDeck);
             }
 
             if(roundResult == 2){
-                gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points\n");
-                gameOutput.append("Hao has " + player2.playerPoints.deck.size() + " points\n");
+                gameOutput.append(player2.getPlayerName() + " Wins the round\n");
+                player2.addPoints(middleDeck);
             }
+
+            gameOutput.append(player1.getPlayerName() + " has a score of " + player1.playerPoints.deck.size() + "\n");
+            gameOutput.append(player2.getPlayerName() + " has a score of " + player2.playerPoints.deck.size() + "\n");
             gameOutput.append("\n");
         }
         return gameOutput;
     }
 
     private int compareCards(Player player1, Player player2) {
-        Card player1Card;
-        Card player2Card;
-        player1Card = player1.playTopCard();
-        player2Card = player2.playTopCard();
+        Card player1Card = player1.playTopCard();;
+        Card player2Card = player2.playTopCard();;
         middleDeck.addCard(player1Card);
         middleDeck.addCard(player2Card);
 
@@ -54,33 +57,30 @@ public class GameSimulationTwo extends GameVariation {
         gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() + "\n");
 
         if(player1Card.getCardRank() > player2Card.getCardRank()){
-            gameOutput.append(player1.getPlayerName() + " Wins the round\n");
-            player1.addPoints(middleDeck);
             return 1;
         }
         else if(player1Card.getCardRank() < player2Card.getCardRank()){
-            gameOutput.append(player2.getPlayerName() + " Wins the round\n");
-            player2.addPoints(middleDeck);
             return 2;
         }
         else {
-            gameOutput.append("tie\n");
             return 0;
         }
     }
 
-    public void checkWinner() {
+    public String checkWinner() {
         Player player1 = listOfPlayers.get(0);
         Player player2 = listOfPlayers.get(1);
 
         if (player1.playerPoints.deck.size() > player2.playerPoints.deck.size()){
-            gameOutput.append(player1.getPlayerName() + " has won by " + player1.playerPoints.deck.size()+ "\n");
+            return ("Winner is " + player1.getPlayerName() + " Hand: " + player1.getPlayerHand().getDeck().size() + " Pile: " +
+                    player1.getPlayerPoints().getDeck().size());
         }
         else if(player1.playerPoints.deck.size() < player2.playerPoints.deck.size()) {
-            gameOutput.append(player2.getPlayerName() + " has won by " + player2.playerPoints.deck.size()+ "\n");
+            return ("Winner is " + player2.getPlayerName() + " Hand: " + player2.getPlayerHand().getDeck().size() + " Pile: " +
+                    player2.getPlayerPoints().getDeck().size());
         }
         else{
-            gameOutput.append("Its a tie!\n");
+            return ("Its a tie!\n");
         }
     }
 

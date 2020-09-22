@@ -7,7 +7,6 @@ public class WarVariationOne extends GameVariation {
     static final Deck middleDeck = new Deck();
     StringBuffer gameOutput = new StringBuffer();
 
-
     public StringBuffer playGame(ArrayList<Player> players) {
 
         int roundResult;
@@ -23,22 +22,19 @@ public class WarVariationOne extends GameVariation {
                 if(player1.playerHand.checkIfDeckEmpty() || player2.playerHand.checkIfDeckEmpty())
                     return gameOutput;
 
+                gameOutput.append("*** WAR!!! ***\n");
                 middleDeck.addCard(player1.playTopCard());
                 middleDeck.addCard(player2.playTopCard());
 
-                playGame(players);
+                continue;
             }
 
             if (roundResult == 1){
                 player1.collectWinnings(middleDeck);
-                gameOutput.append("Daniel has " + player1.playerHand.deck.size() + " cards\n");
-                gameOutput.append("Hao has " + player2.playerHand.deck.size() + " cards\n");
             }
 
             if(roundResult == 2){
                 player2.collectWinnings(middleDeck);
-                gameOutput.append("Daniel has " + player1.playerHand.deck.size() + " cards\n");
-                gameOutput.append("Hao has " + player2.playerHand.deck.size() + " cards\n");
             }
 
             gameOutput.append("\n");
@@ -68,19 +64,20 @@ public class WarVariationOne extends GameVariation {
             return 2;
         }
         else {
-            gameOutput.append("tie\n");
             return 0;
         }
     }
 
-    public void checkWinner() {
+    public String checkWinner() {
         Player player1 = listOfPlayers.get(0);
         Player player2 = listOfPlayers.get(1);
 
         if (player1.checkForEmptyHand()) {
-            gameOutput.append(player2.getPlayerName() + " has won!\n");
+            return (player2.getPlayerName() + " has won!\n");
         }
         else
-            gameOutput.append(player1.getPlayerName() + " has won!\n");
+            return (player1.getPlayerName() + " has won!\n");
     }
+
+
 }

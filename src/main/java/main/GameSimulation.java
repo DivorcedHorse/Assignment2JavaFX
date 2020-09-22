@@ -10,7 +10,7 @@ public class GameSimulation {
         testOne.setUpCardsAndPlayers(test);
 
         stringBuffer = testOne.playGame(testOne.listOfPlayers);
-        testOne.checkWinner();
+        stringBuffer.append(testOne.checkWinner());
 
         return stringBuffer.toString();
     }
@@ -24,7 +24,8 @@ public class GameSimulation {
         testTwo.setUpCardsAndPlayers(test);
         stringBuffer = testTwo.playGame(testTwo.listOfPlayers);
 
-        testTwo.checkWinner();
+        stringBuffer.append(testTwo.checkWinner());
+
         return stringBuffer.toString();
 
     }
@@ -38,7 +39,7 @@ public class GameSimulation {
 
             testThree.setUpCardsAndPlayers(test);
             stringBuffer = testThree.playGame(testThree.listOfPlayers);
-            testThree.checkWinner();
+            //testThree.checkWinner();
             return stringBuffer.toString();
     }
 }

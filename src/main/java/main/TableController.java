@@ -11,7 +11,6 @@ import java.awt.*;
 public class TableController {
     @FXML
     private TextArea gameOutput;
-
     @FXML
     private Button playWar;
     @FXML

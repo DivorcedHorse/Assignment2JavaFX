@@ -3,7 +3,6 @@ package main;
 public class Player {
     String playerName;
     Deck playerHand;
-
     Deck playerPoints = new Deck();
 
     public Player(String name, Deck deck) {
@@ -76,4 +75,13 @@ public class Player {
     public void setPlayerHand(Deck playerHand) {
         this.playerHand = playerHand;
     }
+
+    public Deck getPlayerPoints() {
+        return playerPoints;
+    }
+
+    public void setPlayerPoints(Deck playerPoints) {
+        this.playerPoints = playerPoints;
+    }
+
 }

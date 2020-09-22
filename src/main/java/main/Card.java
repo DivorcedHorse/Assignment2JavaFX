@@ -1,12 +1,9 @@
 package main;
 
-import java.util.*;
-
 public class Card {
     String cardSuit;
     String cardName;
     int cardRank;
-
 
     public Card(String cardRanking, String cardName, int cardValue){
         this.cardSuit = cardRanking;

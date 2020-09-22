@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class WarVariationThree extends GameVariation {
 
@@ -26,10 +27,11 @@ public class WarVariationThree extends GameVariation {
                         player3.playerHand.checkIfDeckEmpty())
                     return gameOutput;
 
+                gameOutput.append("*** WAR!!! ***\n");
                 middleDeck.addCard(player1.playTopCard());
                 middleDeck.addCard(player2.playTopCard());
                 middleDeck.addCard(player3.playTopCard());
-                playGame(players);
+                continue;
             }
 
             if (roundResult == 1){
@@ -87,14 +89,26 @@ public class WarVariationThree extends GameVariation {
         }
     }
 
-    public void checkWinner() {
+
+    public String checkWinner() {
+        /*
         Player player1 = listOfPlayers.get(0);
         Player player2 = listOfPlayers.get(1);
         Player player3 = listOfPlayers.get(2);
 
+        int max = 0;
+        Player winner;
+        for (int i = 0; i < listOfPlayers.size(); i++) {
+            Player tmp = listOfPlayers.get(i);
+            if (tmp.getPlayerPoints().getDeck().size() > max) {
+                max = tmp.getPlayerPoints().getDeck().size();
+                winner = tmp;
+            }
+        }
+
         gameOutput.append("Daniel had " + player1.playerPoints.deck.size() + " points!\n");
         gameOutput.append("Hao had " + player2.playerPoints.deck.size() + " points!\n");
-        gameOutput.append("Rob had " + player3.playerPoints.deck.size() + " points!\n");
-
+        gameOutput.append("Rob had " + player3.playerPoints.deck.size() + " points!\n");*/
+        return "";
     }
 }

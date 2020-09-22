@@ -21,7 +21,7 @@ public abstract class GameVariation {
 
     public abstract StringBuffer playGame(ArrayList<Player> players);
 
-    public abstract void checkWinner();
+    public abstract String checkWinner();
 
     public ArrayList<Player> createPlayers(HashMap<String, Deck> playerDecks, String[] players){
         ArrayList<Player> listOfPlayers = new ArrayList<>();
