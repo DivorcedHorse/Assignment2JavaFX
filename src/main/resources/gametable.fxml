@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
    <bottom>
-      <Button fx:id="playWar" mnemonicParsing="false" onAction="#playWar" text="WAR ONE" BorderPane.alignment="CENTER">
-      <BorderPane.margin>
-            <Insets top="5.0" />
-         </BorderPane.margin></Button>
+      <HBox alignment="CENTER" spacing="60" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <Button fx:id="playWar" mnemonicParsing="false" onAction="#playWar" text="WAR ONE" />
+         <Button fx:id="playWar2" mnemonicParsing="false" onAction="#playWar2" text="WAR TWO" />
+         <Button fx:id="playWar3" mnemonicParsing="false" onAction="#playWar3" text="WAR THREE" />
+
+      </HBox>
+
    </bottom>
+
    <center>
-      <TextArea fx:id="gameOutput" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="gameOutput" prefHeight="410.0" prefWidth="630.0" BorderPane.alignment="CENTER" />
    </center>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

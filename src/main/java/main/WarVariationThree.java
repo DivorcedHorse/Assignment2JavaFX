@@ -14,6 +14,7 @@ public class WarVariationThree extends GameVariation {
 
         int roundResult;
 
+
         while (!player1.playerHand.checkIfDeckEmpty() || !player2.playerHand.checkIfDeckEmpty() ||
                 !player3.playerHand.checkIfDeckEmpty()) {
 

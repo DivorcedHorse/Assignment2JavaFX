@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.event.ActionEvent;
 
+import java.awt.*;
+
 public class TableController {
     @FXML
     private TextArea gameOutput;
@@ -46,9 +48,9 @@ public class TableController {
         // TODO: play a game of War (i.e., until someone wins or there is a tie)
     }
 
-    /*
+
     @FXML
-    void playWarThree(ActionEvent event) {
+    void playWar3(ActionEvent event) {
         GameSimulation gameSimulation = new GameSimulation();
 
         String newText;
@@ -57,9 +59,10 @@ public class TableController {
         gameOutput.setText(newText);
         // TODO: play a game of War (i.e., until someone wins or there is a tie)
     }
-*/
+
     @FXML
     public void initialize() {
         // TODO: if you need to do some GUI init, do it here
+        gameOutput.setText("Please select one of the game options!");
     }
 }

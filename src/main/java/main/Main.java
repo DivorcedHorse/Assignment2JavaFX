@@ -18,7 +18,7 @@ public class Main extends Application {
         loader.setController(new TableController());
         Scene scene = new Scene((Parent) loader.load());
         stage.setScene(scene);
-        stage.setTitle("CS 4773 Assignment 2: War!!1!");
+        stage.setTitle("CS 4773 Assignment 2: War!!!!");
         stage.show();
     }
 }
