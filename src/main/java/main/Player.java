@@ -1,23 +1,27 @@
+/**
+ * Player
+ * 		By Daniel Tellez and Hao Tran
+ *
+ * 	Purpose:
+ * 		Domain model that represents a person playing the WAR variations.
+ */
 package main;
 
 public class Player {
     String playerName;
     Deck playerHand;
-    Deck playerPoints = new Deck();
+    Deck winningsPile = new Deck();
 
     public Player(String name, Deck deck) {
         this.playerName = name;
         this.playerHand = deck;
     }
 
-    public void showMyCards() {
-        System.out.printf("%s's Hand: \n", playerName);
-        while (!playerHand.checkIfDeckEmpty()) {
-            Card tmp = playerHand.getTopCard();
-            System.out.printf("%s %s\n", tmp.getCardSuit(), tmp.getCardName());
-        }
-    }
-
+    /**
+     * Adds current played round cards to players hands
+     *
+     * @param winningDeck - Cards played in round
+     */
     public void collectWinnings(Deck winningDeck) {
         Deck tmp = new Deck();
 
@@ -42,24 +46,35 @@ public class Player {
         }
     }
 
+    /**
+     * Adds cards to winningsPile
+     *
+     * @param winningDeck - Cards played in round
+     */
     public void addPoints(Deck winningDeck){
-        while (!winningDeck.checkIfDeckEmpty()){
-            playerPoints.addCard(winningDeck.getTopCard());
-        }
-
+        while (!winningDeck.checkIfDeckEmpty())
+            winningsPile.addCard(winningDeck.getTopCard());
     }
 
-
-
-
+    /**
+     * Player plays top card from players hand
+     *
+     * @return Card - Top card from players deck
+     */
     public Card playTopCard() {
         return playerHand.getTopCard();
     }
 
+    /**
+     * Checks if players hands is empty
+     *
+     * @return Boolean - True if empty, false otherwise
+     */
     public boolean checkForEmptyHand() {
         return playerHand.checkIfDeckEmpty();
     }
 
+    // GETTERS AND SETTERS
     public String getPlayerName() {
         return playerName;
     }
@@ -76,12 +91,12 @@ public class Player {
         this.playerHand = playerHand;
     }
 
-    public Deck getPlayerPoints() {
-        return playerPoints;
+    public Deck getWinningsPile() {
+        return winningsPile;
     }
 
-    public void setPlayerPoints(Deck playerPoints) {
-        this.playerPoints = playerPoints;
+    public void setWinningsPile(Deck winningsPile) {
+        this.winningsPile = winningsPile;
     }
 
 }

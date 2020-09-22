@@ -1,3 +1,10 @@
+/**
+ * Card
+ * 		By Daniel Tellez and Hao Tran
+ *
+ * 	Purpose:
+ * 		Domain model that represents a playing card.
+ */
 package main;
 
 public class Card {
@@ -11,7 +18,7 @@ public class Card {
         this.cardRank = cardValue;
     }
 
-    // Getter and setters
+    // GETTERS AND SETTERS
     public String getCardSuit() {
         return cardSuit;
     }

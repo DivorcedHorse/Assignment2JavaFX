@@ -40,8 +40,8 @@ public class GameSimulationTwo extends GameVariation {
                 player2.addPoints(middleDeck);
             }
 
-            gameOutput.append(player1.getPlayerName() + " has a score of " + player1.playerPoints.deck.size() + "\n");
-            gameOutput.append(player2.getPlayerName() + " has a score of " + player2.playerPoints.deck.size() + "\n");
+            gameOutput.append(player1.getPlayerName() + " has a score of " + player1.winningsPile.deck.size() + "\n");
+            gameOutput.append(player2.getPlayerName() + " has a score of " + player2.winningsPile.deck.size() + "\n");
             gameOutput.append("\n");
         }
         return gameOutput;
@@ -71,13 +71,13 @@ public class GameSimulationTwo extends GameVariation {
         Player player1 = listOfPlayers.get(0);
         Player player2 = listOfPlayers.get(1);
 
-        if (player1.playerPoints.deck.size() > player2.playerPoints.deck.size()){
+        if (player1.winningsPile.deck.size() > player2.winningsPile.deck.size()){
             return ("Winner is " + player1.getPlayerName() + " Hand: " + player1.getPlayerHand().getDeck().size() + " Pile: " +
-                    player1.getPlayerPoints().getDeck().size());
+                    player1.getWinningsPile().getDeck().size());
         }
-        else if(player1.playerPoints.deck.size() < player2.playerPoints.deck.size()) {
+        else if(player1.winningsPile.deck.size() < player2.winningsPile.deck.size()) {
             return ("Winner is " + player2.getPlayerName() + " Hand: " + player2.getPlayerHand().getDeck().size() + " Pile: " +
-                    player2.getPlayerPoints().getDeck().size());
+                    player2.getWinningsPile().getDeck().size());
         }
         else{
             return ("Its a tie!\n");

@@ -1,28 +1,58 @@
+/**
+ * Deck
+ * 		By Daniel Tellez and Hao Tran
+ *
+ * 	Purpose:
+ * 		Domain model that represents a playing deck that contains cards.
+ */
 package main;
 
 import java.util.Stack;
+
 public class Deck {
     Stack<Card> deck;
 
-    // Had to include a main.Deck constructor b/c splitDeck needed to
-    // create a fresh new stack for each player....in main the builder
-    // did all the work
     public Deck() {
         deck = new Stack<>();
     }
 
+    /**
+     * Adds card to deck
+     *
+     * @param card - Card added to deck
+     */
     public void addCard(Card card) {
         deck.add(card);
     }
 
+    /**
+     * Checks if deck is empty
+     *
+     * @return - True if empty, false otherwise
+     */
     public boolean checkIfDeckEmpty() {
         return deck.empty();
     }
 
+    /**
+     * Pops top card from deck (stack)
+     *
+     * @return Card - Popped card from deck
+     */
     public Card getTopCard(){
         return deck.pop();
     }
 
+    /**
+     * Gives number of cards in this deck
+     *
+     * @return int - size of deck
+     */
+    public int getDeckSize() {
+        return deck.size();
+    }
+
+    // GETTERS AND SETTERS
     public Stack<Card> getDeck() {
         return deck;
     }

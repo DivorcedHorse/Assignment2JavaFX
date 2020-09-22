@@ -1,7 +1,6 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class WarVariationThree extends GameVariation {
 
@@ -49,9 +48,9 @@ public class WarVariationThree extends GameVariation {
                 player3.addPoints(middleDeck);
             }
 
-            gameOutput.append("Daniel has " + player1.playerPoints.deck.size() + " points\n");
-            gameOutput.append("HAO has " + player2.playerPoints.deck.size() + " points\n");
-            gameOutput.append("Rob has " + player3.playerPoints.deck.size() + " points\n");
+            gameOutput.append("Daniel has " + player1.winningsPile.deck.size() + " points\n");
+            gameOutput.append("HAO has " + player2.winningsPile.deck.size() + " points\n");
+            gameOutput.append("Rob has " + player3.winningsPile.deck.size() + " points\n");
             gameOutput.append("\n");
 
         }

@@ -10,12 +10,15 @@ public abstract class GameVariation {
     public void setUpCardsAndPlayers(String[] players) {
 
         HashMap<String, Deck> playerCards = new HashMap<String, Deck>();
+
         Deck mainDeck = new DeckCreator().initDeck();
         Dealer dealer = new Dealer(players);
+
         dealer.setDeck(mainDeck);
         dealer.shuffleDeck();
 
         playerCards = dealer.splitDeck();
+
         listOfPlayers = createPlayers(playerCards, players);
     }
 
