@@ -4,6 +4,7 @@
  *
  * 	Purpose:
  * 		Domain model that represents a person playing the WAR variations.
+ * 	    Player will keep track of their own hands and points pile.
  */
 package main;
 

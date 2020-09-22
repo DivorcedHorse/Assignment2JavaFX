@@ -20,30 +20,32 @@ public class Dealer {
     }
 
     /**
+     *  Distributes even amount of cards to each players hand.
      *
-     * @return
+     * @return playerCards - Corresponding deck to each player.
      */
     public HashMap<String, Deck> splitDeck() {
         int curPlayer = 0;
         int numPlayers = players.length;
         int numCardsPerPlayer =  deck.getDeckSize() / numPlayers;
-        int curCards = 0;
+        int givenCardCnt = 0;
 
         HashMap<String, Deck> playerCards = createPlayerDecks();
 
-        while(!deck.checkIfDeckEmpty()){
-            if (curCards == numCardsPerPlayer) {
+        while(!deck.checkIfDeckEmpty()) {
+            if (givenCardCnt == numCardsPerPlayer) {
                 curPlayer++;
-                curCards = 0;
+                givenCardCnt = 0;
             }
-            if (curPlayer == 3) {
+            if (curPlayer == 3)
                 break;
-            }
-            playerCards.get(players[curPlayer]).addCard(deck.getDeck().pop());
-            curCards++;
+
+            playerCards.get(players[curPlayer]).addCard(deck.getTopCard());
+            givenCardCnt++;
         }
         return playerCards;
     }
+
 
     private HashMap<String, Deck> createPlayerDecks() {
         HashMap<String, Deck> playerCards = new HashMap<String, Deck>();
@@ -54,17 +56,15 @@ public class Dealer {
         return playerCards;
     }
 
+    /**
+     * Simply rearranges order of cards in deck
+     *
+     */
     public void shuffleDeck() {
         Collections.shuffle(deck.getDeck());
     }
 
-    public void printDeck() {
-        while (!deck.checkIfDeckEmpty()) {
-            Card tmp = deck.getTopCard();
-            System.out.printf("%s %s\n", tmp.getCardSuit(), tmp.getCardName());
-        }
-    }
-
+    // GETTERS AND SETTERS
     public Deck getDeck() {
         return deck;
     }
@@ -72,5 +72,14 @@ public class Dealer {
     public void setDeck(Deck deck) {
         this.deck = deck;
     }
+
+    public String[] getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(String[] players) {
+        this.players = players;
+    }
+
 
 }

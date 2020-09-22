@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public class GameSimulationTwo extends GameVariation {
+public class WarVariationTwo extends GameVariation {
 
     static final Deck middleDeck = new Deck();
     StringBuffer gameOutput = new StringBuffer();

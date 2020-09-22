@@ -1,45 +1,65 @@
+/**
+ * GameSimulation
+ * 		By Daniel Tellez and Hao Tran
+ *
+ * 	Purpose:
+ * 		Simulates the three WAR variations.  Calls and runs the
+ * 	    necessary methods needed to play a WAR game.
+ */
 package main;
 
 public class GameSimulation {
 
+    private StringBuffer stringBuffer = new StringBuffer();
+
+    /**
+     * Plays a simulation of the first WAR variation game.
+     *
+     * @return
+     */
     public String playWARVariationOne() {
-        StringBuffer stringBuffer = new StringBuffer();
+        main.WarVariationOne warOneSimulation = new main.WarVariationOne();
 
-        main.WarVariationOne testOne = new main.WarVariationOne();
-        String[] test = {"Daniel", "Hao"};
-        testOne.setUpCardsAndPlayers(test);
+        String[] playerNames = {"Daniel", "Hao"};
+        warOneSimulation.setUpCardsAndPlayers(playerNames);
 
-        stringBuffer = testOne.playGame(testOne.listOfPlayers);
-        stringBuffer.append(testOne.checkWinner());
+        stringBuffer.append(warOneSimulation.playGame(warOneSimulation.listOfPlayers));
+        stringBuffer.append(warOneSimulation.checkWinner());
 
         return stringBuffer.toString();
     }
 
+    /**
+     * Plays a simulation of the second WAR variation game.
+     *
+     * @return
+     */
     public String playWARVariationTwo() {
-        StringBuffer stringBuffer = new StringBuffer();
+        main.WarVariationTwo warTwoSimulation = new main.WarVariationTwo();
 
-        String[] test = {"Daniel", "Hao"};
-        main.GameSimulationTwo testTwo = new main.GameSimulationTwo();
+        String[] playerNames = {"Daniel", "Hao"};
+        warTwoSimulation.setUpCardsAndPlayers(playerNames);
 
-        testTwo.setUpCardsAndPlayers(test);
-        stringBuffer = testTwo.playGame(testTwo.listOfPlayers);
-
-        stringBuffer.append(testTwo.checkWinner());
+        stringBuffer.append(warTwoSimulation.playGame(warTwoSimulation.listOfPlayers));
+        stringBuffer.append(warTwoSimulation.checkWinner());
 
         return stringBuffer.toString();
-
     }
 
-        //SETUP FOR SECOND VARIATION
-        public String playWARVariationThree() {
-            StringBuffer stringBuffer = new StringBuffer();
+    /**
+     * Plays a simulation of the third WAR variation game.
+     *
+     * @return
+     */
+    public String playWARVariationThree() {
+        main.WarVariationThree warThreeSimulation = new WarVariationThree();
 
-            WarVariationThree testThree = new WarVariationThree();
-            String[] test = {"Daniel", "HAO", "Rob"};
+        String[] playerNames = {"Daniel", "HAO", "Rob"};
+        warThreeSimulation.setUpCardsAndPlayers(playerNames);
 
-            testThree.setUpCardsAndPlayers(test);
-            stringBuffer = testThree.playGame(testThree.listOfPlayers);
-            //testThree.checkWinner();
-            return stringBuffer.toString();
+        stringBuffer.append(warThreeSimulation.playGame(warThreeSimulation.listOfPlayers));
+        stringBuffer.append(warThreeSimulation.checkWinner());
+
+        return stringBuffer.toString();
     }
 }
