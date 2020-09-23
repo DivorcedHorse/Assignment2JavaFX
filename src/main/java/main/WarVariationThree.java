@@ -89,12 +89,11 @@ public class WarVariationThree extends GameVariation {
     }
 
 
-    public void checkWinner(ArrayList<Player> players) {
+    public String checkWinner() {
         /*
         Player player1 = listOfPlayers.get(0);
         Player player2 = listOfPlayers.get(1);
         Player player3 = listOfPlayers.get(2);
-
         int max = 0;
         Player winner;
         for (int i = 0; i < listOfPlayers.size(); i++) {
@@ -104,9 +103,9 @@ public class WarVariationThree extends GameVariation {
                 winner = tmp;
             }
         }
-
         gameOutput.append("Daniel had " + player1.playerPoints.deck.size() + " points!\n");
         gameOutput.append("Hao had " + player2.playerPoints.deck.size() + " points!\n");
         gameOutput.append("Rob had " + player3.playerPoints.deck.size() + " points!\n");*/
+        return "";
     }
 }
