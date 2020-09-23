@@ -64,7 +64,7 @@ public abstract class GameVariation {
      *
      * @return String - String that contains winner.
      */
-    public abstract String checkWinner();
+    public abstract void checkWinner(ArrayList<Player> players);
 
 
 
