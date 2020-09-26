@@ -1,3 +1,13 @@
+/**
+ * WarVariationTwo
+ * 		By Daniel Tellez and Hao Tran
+ *
+ * 	Purpose:
+ * 		Represents the second WAR variation game.
+ * 	    Simulates the steps/turns needed for two players
+ * 	    to play.  Winner is player with the most cards
+ * 	    at the end of the game.
+ */
 package main;
 
 import java.util.ArrayList;
@@ -22,10 +32,29 @@ public class WarVariationTwo extends GameVariation {
                 prepareForWar(player1, player2);
                 continue;
             }
-
             determineWinner(roundResult, player1, player2);
         }
         return gameOutput;
+    }
+
+    private int compareCards(Player player1, Player player2) {
+        Card player1Card = player1.playTopCard();;
+        Card player2Card = player2.playTopCard();;
+        middleDeck.addCard(player1Card);
+        middleDeck.addCard(player2Card);
+
+        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() + "\n" );
+        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() + "\n");
+
+        if(player1Card.getCardRank() > player2Card.getCardRank()){
+            return 1;
+        }
+        else if(player1Card.getCardRank() < player2Card.getCardRank()){
+            return 2;
+        }
+        else {
+            return 0;
+        }
     }
 
     private void prepareForWar(Player player1, Player player2) {
@@ -50,37 +79,17 @@ public class WarVariationTwo extends GameVariation {
         gameOutput.append("\n");
     }
 
-    private int compareCards(Player player1, Player player2) {
-        Card player1Card = player1.playTopCard();;
-        Card player2Card = player2.playTopCard();;
-        middleDeck.addCard(player1Card);
-        middleDeck.addCard(player2Card);
-
-        gameOutput.append(player1.getPlayerName() + " plays " + player1Card.getCardName() + " of " + player1Card.getCardSuit() + "\n" );
-        gameOutput.append(player2.getPlayerName() + " plays " + player2Card.getCardName() + " of " + player2Card.getCardSuit() + "\n");
-
-        if(player1Card.getCardRank() > player2Card.getCardRank()){
-            return 1;
-        }
-        else if(player1Card.getCardRank() < player2Card.getCardRank()){
-            return 2;
-        }
-        else {
-            return 0;
-        }
-    }
-
     public String checkWinner() {
         Player player1 = listOfPlayers.get(0);
         Player player2 = listOfPlayers.get(1);
 
         if (player1.winningsPile.deck.size() > player2.winningsPile.deck.size()){
-            return ("Winner is " + player1.getPlayerName() + " Hand: " + player1.getPlayerHand().getDeck().size() + " Pile: " +
-                    player1.getWinningsPile().getDeck().size());
+            return ("Winner is " + player1.getPlayerName() + " Hand: " + player1.getPlayersHandSize() + " Pile: " +
+                    player1.getWinningsPileSize());
         }
         else if(player1.winningsPile.deck.size() < player2.winningsPile.deck.size()) {
-            return ("Winner is " + player2.getPlayerName() + " Hand: " + player2.getPlayerHand().getDeck().size() + " Pile: " +
-                    player2.getWinningsPile().getDeck().size());
+            return ("Winner is " + player2.getPlayerName() + " Hand: " + player2.getPlayersHandSize() + " Pile: " +
+                    player2.getWinningsPileSize());
         }
         else{
             return ("Its a tie!\n");

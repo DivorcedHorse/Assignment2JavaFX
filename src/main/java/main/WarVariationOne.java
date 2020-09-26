@@ -1,3 +1,12 @@
+/**
+ * WarVariationOne
+ * 		By Daniel Tellez and Hao Tran
+ *
+ * 	Purpose:
+ * 		Represents the first WAR variation game.
+ * 	    Simulates the steps/turns needed for two players
+ * 	    to play until one runs out of cards.
+ */
 package main;
 
 import java.util.ArrayList;
@@ -7,6 +16,7 @@ public class WarVariationOne extends GameVariation {
     static final Deck middleDeck = new Deck();
     StringBuffer gameOutput = new StringBuffer();
 
+    // MAYBE COMMENT?
     public StringBuffer playGame(ArrayList<Player> players) {
         int roundResult;
         Player player1 = players.get(0);
@@ -78,6 +88,4 @@ public class WarVariationOne extends GameVariation {
         else
             return (player1.getPlayerName() + " has won!\n");
     }
-
-
 }

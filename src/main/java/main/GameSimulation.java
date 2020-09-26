@@ -12,6 +12,7 @@ public class GameSimulation {
 
     private StringBuffer stringBuffer = new StringBuffer();
 
+
     /**
      * Plays a simulation of the first WAR variation game.
      *

@@ -18,6 +18,7 @@ public class TableController {
     public TableController() {
     }
 
+
     @FXML
     void playWar(ActionEvent event) {
         GameSimulation gameSimulation = new GameSimulation();

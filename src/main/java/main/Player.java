@@ -8,6 +8,8 @@
  */
 package main;
 
+import java.util.Collections;
+
 public class Player {
     String playerName;
     Deck playerHand;
@@ -25,6 +27,7 @@ public class Player {
      */
     public void collectWinnings(Deck winningDeck) {
         Deck tmp = new Deck();
+        Collections.shuffle(winningDeck.getDeck());
 
         // empty out current players hand
         while (!playerHand.checkIfDeckEmpty()) {
@@ -36,14 +39,10 @@ public class Player {
             playerHand.addCard(winningDeck.getTopCard());
         }
 
-        // reverse the tmp deck to maintain original order
-        while (!tmp.checkIfDeckEmpty()) {
-            winningDeck.addCard(tmp.getTopCard());
-        }
 
         // now can add the cards back into players hand
-        while (!winningDeck.checkIfDeckEmpty()) {
-            playerHand.addCard(winningDeck.getTopCard());
+        while (!tmp.checkIfDeckEmpty()) {
+            playerHand.addCard(tmp.getTopCard());
         }
     }
 
@@ -73,6 +72,24 @@ public class Player {
      */
     public boolean checkForEmptyHand() {
         return playerHand.checkIfDeckEmpty();
+    }
+
+    /**
+     * Gets the number of cards in players hand
+     *
+     * @return int - size of the hand
+     */
+    public int getPlayersHandSize() {
+        return playerHand.getDeckSize();
+    }
+
+    /**
+     * Gets the number of cards in winningsPile deck
+     *
+     * @return int - size of the winningsPile
+     */
+    public int getWinningsPileSize() {
+        return winningsPile.getDeckSize();
     }
 
     // GETTERS AND SETTERS
