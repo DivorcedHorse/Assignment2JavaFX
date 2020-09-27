@@ -66,6 +66,36 @@ public abstract class GameVariation {
      */
     public abstract String checkWinner();
 
+    /**
+     * Checks to see if any of the players hands/deck
+     * is empty.  If so, returns false to stop
+     * the game.
+     *
+     * @return - =
+     */
+    public abstract boolean checkForAnyEmptyDeck();
 
+    /**
+     * Compares the card values that the players
+     * played for that round.  Looks for the highest
+     * played card.
+     *
+     * @return int - Number indicating which player won
+     *               round (or tie)
+     */
+    public abstract int compareCards();
 
-}
+    /**
+     * Determines who won the round just played.  Winner
+     * collects their winnings and appends output.
+     *
+     * @param roundResult - int representing player who won round
+     */
+    public abstract void determineRoundWinner(int roundResult);
+
+    /**
+     * A tie has occurred, simply appends statement
+     * and players play a face down card.
+     */
+    public abstract void prepareForWAR();
+    }
