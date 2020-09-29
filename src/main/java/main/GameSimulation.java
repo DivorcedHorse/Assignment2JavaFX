@@ -26,6 +26,7 @@ public class GameSimulation {
 
         stringBuffer.append(warOneSimulation.playGame(warOneSimulation.listOfPlayers));
         stringBuffer.append(warOneSimulation.checkWinner());
+        warOneSimulation.clearMiddleDeck();
 
         return stringBuffer.toString();
     }

@@ -35,9 +35,8 @@ public class WarVariationTwo extends GameVariation {
                     return gameOutput;
 
                 prepareForWAR();
-                continue;
-            }
-            determineRoundWinner(roundResult);
+            } else
+                 determineRoundWinner(roundResult);
         }
         return gameOutput;
     }
@@ -100,10 +99,7 @@ public class WarVariationTwo extends GameVariation {
                     player2.getWinningsPileSize());
         }
         else{
-            return ("Its a tie!\n");
+            return ("It's a tie!\n");
         }
     }
-
-
-
 }

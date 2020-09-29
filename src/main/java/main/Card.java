@@ -12,10 +12,10 @@ public class Card {
     String cardName;
     int cardRank;
 
-    public Card(String cardRanking, String cardName, int cardValue){
-        this.cardSuit = cardRanking;
+    public Card(String cardSuit, String cardName, int cardRank){
+        this.cardSuit = cardSuit;
         this.cardName = cardName;
-        this.cardRank = cardValue;
+        this.cardRank = cardRank;
     }
 
     // GETTERS AND SETTERS

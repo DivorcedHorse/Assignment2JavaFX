@@ -26,18 +26,17 @@ public class WarVariationOne extends GameVariation {
         player1 = players.get(PLAYER_ONE_ID);
         player2 = players.get(PLAYER_TWO_ID);
 
-        gameOutput.append("Starting cards D = " + player1.getPlayersHandSize() + " H = " + player2.getPlayersHandSize() + "\n");
+        //gameOutput.append("Starting cards D = " + player1.getPlayersHandSize() + " H = " + player2.getPlayersHandSize() + "\n");
         while(checkForAnyEmptyDeck()){
             roundResult = compareCards();
 
             if(roundResult == TIE_ID) {
-                if(player1.playerHand.checkIfDeckEmpty() || player2.playerHand.checkIfDeckEmpty())
+                if (player1.playerHand.checkIfDeckEmpty() || player2.playerHand.checkIfDeckEmpty())
                     return gameOutput;
 
                 prepareForWAR();
-                continue;
-            }
-            determineRoundWinner(roundResult);
+            } else
+                determineRoundWinner(roundResult);
         }
         return gameOutput;
     }
@@ -67,7 +66,6 @@ public class WarVariationOne extends GameVariation {
         }
     }
 
-
     public void determineRoundWinner(int roundResult) {
         if (roundResult == PLAYER_ONE_ID){
             gameOutput.append(player1.getPlayerName() + " Wins the round\n");
@@ -95,5 +93,13 @@ public class WarVariationOne extends GameVariation {
         }
         else
             return (player1.getPlayerName() + " has won!\n");
+    }
+
+    /**
+     * Clears the middle deck after a game has
+     * ended.
+     */
+    public void clearMiddleDeck() {
+        middleDeck.getDeck().clear();
     }
 }

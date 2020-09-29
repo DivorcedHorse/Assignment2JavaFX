@@ -19,12 +19,10 @@ public class WarVariationThree extends GameVariation {
     public static final int PLAYER_TWO_ID = 1;
     public static final int PLAYER_THREE_ID = 2;
     public static final int TIE_ID = 3;
-
     StringBuffer gameOutput = new StringBuffer();
     Player player1;
     Player player2;
     Player player3;
-
 
     public StringBuffer playGame(ArrayList<Player> players) {
         player1 = players.get(PLAYER_ONE_ID);
@@ -40,9 +38,8 @@ public class WarVariationThree extends GameVariation {
                     return gameOutput;
 
                 prepareForWAR();
-                continue;
-            }
-            determineRoundWinner(roundResult);
+            } else
+                determineRoundWinner(roundResult);
         }
         return gameOutput;
     }
