@@ -9,3 +9,15 @@ and play another card.  Player with the highest card wins all the cards of that 
 ## Classes
 
 * Card.java
+      Purpose - Domain model that represents a single playing card.
+      The Card class follows the **Single Responsibility Principle** as it simply represents a single playing card from a deck.  For a single Card, we store it's suit type, the         name of the card, and a rank value.
+* Deck.java
+* DeckCreator.java
+* Player.java
+* Dealer.java
+* GameVariation.java
+* WarVariationOne.java
+* WarVariationTwo.java
+* WarVariationThree.java
+* GameSimulation.java
+
