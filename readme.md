@@ -9,11 +9,11 @@ and play another card.  Player with the highest card wins all the cards of that 
 ## Classes
 
 * **Card.java**<br /><br />
-      Purpose - Domain model that represents a single playing card.<br /><br />
+      Purpose - **Domain model** that represents a single playing card.<br /><br />
       The Card class follows the **Single Responsibility Principle** as it simply represents a single playing card from a deck.  For a single Card, we store it's suit type, the         name of the card, and a rank value.<br /><br />
       
 * **Deck.java**<br /><br />
-      Purpose - Domain model that represents a playing deck that contains cards. <br /><br />
+      Purpose - **Domain model** that represents a playing deck that contains cards. <br /><br />
       The Deck class follows the **Single Responsiblity Principle** as it represents a deck of cards.  As expected, a deck can add a card to it, remove the top card, and other           simple functions related to a deck. <br /><br />
 
 * **DeckCreator.java**<br /><br />
@@ -21,10 +21,10 @@ and play another card.  Player with the highest card wins all the cards of that 
       The DeckCreator class follows the **Pure Fabrication** as it implements the methods of actually creating a deck of cards.  Rather than having the Deck class do the work,           DeckCreator takes responbility allows the Deck class to be cleaner and simpler.  <br /><br />
       
 * **Player.java**<br /><br />
-      Purpose - Domain model that represents a person playing the WAR variations.  Player will keep track of their own hands and points pile.<br /><br />
+      Purpose - **Domain model** that represents a person playing the WAR variations.  Player will keep track of their own hands and points pile.<br /><br />
       
 * **Dealer.java**<br /><br />
-      Purpose - Domain model that represents a dealer.  Responsible for dealing the cards to number of players and shuffling deck.<br /><br />
+      Purpose - **Domain model** that represents a dealer.  Responsible for dealing the cards to number of players and shuffling deck.<br /><br />
 
 * **GameVariation.java**<br /><br />
       Purpose - Abstract class defining the necessary methods that each WAR variation must implement in order to play a game of WAR.<br /><br />
