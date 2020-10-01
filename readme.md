@@ -17,8 +17,13 @@ and play another card.  Player with the highest card wins all the cards of that 
       The Deck class follows the **Single Responsiblity Principle** as it represents a deck of cards.  As expected, a deck can add a card to it, remove the top card, and other           simple functions related to a deck. <br /><br />
 
 * DeckCreator.java
+      Purpose - Builder class that creates and initializes standard playing deck.<br /><br />
+      
 * Player.java
+      Purpose - Domain model that represents a person playing the WAR variations.  Player will keep track of their own hands and points pile.<br /><br />
+      
 * Dealer.java
+      Purpose - Domain model that represents a dealer.  Responsible for dealing the cards to number of players and shuffling deck.<br /><br />
 
 * GameVariation.java
       Purpose - Abstract class defining the necessary methods that each WAR variation must implement in order to play a game of WAR.<br /><br />
@@ -34,5 +39,14 @@ and play another card.  Player with the highest card wins all the cards of that 
       
 * WarVariationThree.java
       Purpose - Represents the third WAR variation game.  Simulates the steps/turns needed for three players to play.  Winner is player with the most cards at the end of the           game.  <br /><br />
+      The WarVariationThree class follows the **Open-Closed Principle** and **Protected Variations** as our class extends the GameVariation abstract class.  WarVariationThree         implements its own unique functions without modifying the abstract-superclass.  We add the variations in th subclass to accommodate a variation in behavior that is not           found in the other extensions of GameVariation.<br /><br />
+      
 * GameSimulation.java
+      Purpose - Simulates the three WAR variations.  Calls and runs the necessary methods needed to play a WAR game.<br /><br />
+
+* GameController.java
+      Purpose - The C in MVC.  Accepts input and coverts it to commands for the model or view.  <br /><br />
+      The GameController class follows the **Controller** pattern of GRASP.  It is responsible of taking in the user actions of clicking the WAR buttons and notifying the Model       what methods and classes need to be called to display it back to the View.<br /><br />
+      
+* Main.java 
 
