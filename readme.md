@@ -34,7 +34,7 @@ and play another card.  Player with the highest card wins all the cards of that 
       The WarVariationOne class follows the **Open-Closed Principle** as our class extends the GameVariation abstract class.  WarVariationOne adds its own requirements from the       abstract methods of GameVariation but doesn't change the GameVariation class; good use of polymorphism.<br /><br />
       
 * WarVariationTwo.java
-      Purpose - Represents the second WAR variation game. Simulates the steps/turns needed for two players to play.  Winner is player with the most cards at the end of the game.
+      Purpose - Represents the second WAR variation game. Simulates the steps/turns needed for two players to play.  Winner is player with the most cards at the end of the game.<br /><br />
       The WarVariationTwo class follows the **Open-Closed Principle** as our class extends the GameVariation abstract class.  WarVariationTwo adds its own requirements from the       abstract methods by adding its own *weird requirements* such as using a points pile in the methods to track player points.  Rather than having the game continue until a         player runs out of cards, such as found in WarVariationOne, WarVariatioTwo adds its own functionality.<br /><br />
       
 * WarVariationThree.java
