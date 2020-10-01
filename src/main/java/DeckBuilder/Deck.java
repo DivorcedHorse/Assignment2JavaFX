@@ -5,7 +5,7 @@
  * 	Purpose:
  * 		Domain model that represents a playing deck that contains cards.
  */
-package main;
+package DeckBuilder;
 
 import java.util.Stack;
 

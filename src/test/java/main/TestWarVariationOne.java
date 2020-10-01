@@ -2,6 +2,8 @@ package main;
 
 import static org.junit.Assert.*;
 
+import DeckBuilder.Card;
+import DeckBuilder.Deck;
 import org.junit.*;
 
 import java.util.ArrayList;
@@ -40,6 +42,30 @@ public class TestWarVariationOne {
         assertEquals(expectedPlayerIDWin, testWarOne.compareCards());
     }
 
+    @Test
+    public void testCheckWinnerString() {
+        player1.getPlayerHand().addCard(new Card("DIAMONDS", "10", 10));
+
+        String expectedWinnerOutput = "Daniel has won!\n";
+        assertEquals(expectedWinnerOutput, testWarOne.checkWinner());
+    }
+
+
+    /*
+    @Test
+    public void testCheckWARFlipFaceCardDown() {
+        player1.getPlayerHand().addCard(new Card("DIAMONDS", "2", 2));
+        player1.getPlayerHand().addCard(new Card("SPADES", "4", 4));
+
+        player2.getPlayerHand().addCard(new Card("CLUBS", "3", 3));
+        player2.getPlayerHand().addCard(new Card("HEARTS", "4", 4));
+
+        int expectedNumberOfCards = 0;
+
+        testWarOne.playGame(players);
+        assertEquals(expectedNumberOfCards, player1.getPlayersHandSize());
+        assertEquals(expectedNumberOfCards, player2.getPlayersHandSize());
+    }*/
 
     /*
     @Test
@@ -55,6 +81,7 @@ public class TestWarVariationOne {
     }*/
 
 
+    //relook at
     @Test
     public void testWARWinner() {
         player1.getPlayerHand().addCard(new Card("DIAMONDS", "6", 6));

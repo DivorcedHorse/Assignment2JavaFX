@@ -3,11 +3,12 @@ package main;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
+import DeckBuilder.Deck;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import main.Card;
+import DeckBuilder.Card;
 
 public class TestWarVariationTwo {
     private static WarVariationTwo testWarOne;

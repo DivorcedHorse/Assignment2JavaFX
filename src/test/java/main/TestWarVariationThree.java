@@ -3,14 +3,11 @@ package main;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
-import main.Deck;
-import main.Player;
-import main.WarVariationTwo;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import main.Card;
+import DeckBuilder.Card;
 
 public class TestWarVariationThree {
     private static WarVariationThree testWarOne;
@@ -48,9 +45,10 @@ public class TestWarVariationThree {
         System.out.println(expectedWinners);
         System.out.println(testWarOne.checkWinner());
 
-        //assertEquals(0,0);
         assertEquals(expectedWinners,testWarOne.checkWinner());
     }
+
+
 
     @After
     public void tearDown() {

@@ -9,6 +9,9 @@
  */
 package main;
 
+import DeckBuilder.Card;
+import DeckBuilder.Deck;
+
 import java.util.ArrayList;
 
 public class WarVariationOne extends GameVariation {

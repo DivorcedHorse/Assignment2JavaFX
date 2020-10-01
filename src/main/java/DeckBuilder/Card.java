@@ -3,9 +3,9 @@
  * 		By Daniel Tellez and Hao Tran
  *
  * 	Purpose:
- * 		Domain model that represents a playing card.
+ * 		Domain model that represents a single playing card.
  */
-package main;
+package DeckBuilder;
 
 public class Card {
     String cardSuit;

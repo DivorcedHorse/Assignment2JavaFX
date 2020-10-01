@@ -8,6 +8,7 @@
  */
 package main;
 
+import DeckBuilder.Deck;
 import java.util.Collections;
 import java.util.HashMap;
 

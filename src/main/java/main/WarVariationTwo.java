@@ -10,6 +10,9 @@
  */
 package main;
 
+import DeckBuilder.Card;
+import DeckBuilder.Deck;
+
 import java.util.ArrayList;
 
 public class WarVariationTwo extends GameVariation {
@@ -77,8 +80,8 @@ public class WarVariationTwo extends GameVariation {
             player2.addPoints(middleDeck);
         }
 
-        gameOutput.append(player1.getPlayerName() + " has a score of " + player1.winningsPile.deck.size() + "\n");
-        gameOutput.append(player2.getPlayerName() + " has a score of " + player2.winningsPile.deck.size() + "\n");
+        gameOutput.append(player1.getPlayerName() + " has a score of " + player1.getWinningsPileSize() + "\n");
+        gameOutput.append(player2.getPlayerName() + " has a score of " + player2.getWinningsPileSize() + "\n");
         gameOutput.append("\n");
     }
 
@@ -90,11 +93,11 @@ public class WarVariationTwo extends GameVariation {
 
     public String checkWinner() {
 
-        if (player1.winningsPile.deck.size() > player2.winningsPile.deck.size()){
+        if (player1.getWinningsPileSize() > player2.getWinningsPileSize()){
             return ("Winner is " + player1.getPlayerName() + " Hand: " + player1.getPlayersHandSize() + " Pile: " +
                     player1.getWinningsPileSize());
         }
-        else if(player1.winningsPile.deck.size() < player2.winningsPile.deck.size()) {
+        else if(player1.getWinningsPileSize() < player2.getWinningsPileSize()) {
             return ("Winner is " + player2.getPlayerName() + " Hand: " + player2.getPlayersHandSize() + " Pile: " +
                     player2.getWinningsPileSize());
         }

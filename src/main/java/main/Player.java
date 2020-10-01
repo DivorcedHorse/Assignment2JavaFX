@@ -8,6 +8,9 @@
  */
 package main;
 
+import DeckBuilder.Card;
+import DeckBuilder.Deck;
+
 import java.util.Collections;
 
 public class Player {

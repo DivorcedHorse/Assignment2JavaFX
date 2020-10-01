@@ -5,8 +5,7 @@
  * 	Purpose:
  * 		Builder class that creates and initializes standard playing deck.
  */
-package main;
-
+package DeckBuilder;
 import java.util.Stack;
 
 public class DeckCreator {
