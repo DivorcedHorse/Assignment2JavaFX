@@ -79,7 +79,7 @@ public class WarVariationOne extends GameVariation {
             gameOutput.append(player2.getPlayerName() + " Wins the round\n");
             player2.collectWinnings(middleDeck);
         }
-        gameOutput.append("D = " + player1.getPlayerHand().getDeckSize() + " .... H = " + player2.getPlayerHand().getDeckSize() + "\n");
+        gameOutput.append("D = " + player1.getPlayersHandSize() + " .... H = " + player2.getPlayersHandSize() + "\n");
 
         gameOutput.append("\n");
     }

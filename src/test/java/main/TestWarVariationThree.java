@@ -3,6 +3,7 @@ package main;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
+import DeckBuilder.Deck;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -10,7 +11,7 @@ import org.junit.Test;
 import DeckBuilder.Card;
 
 public class TestWarVariationThree {
-    private static WarVariationThree testWarOne;
+    private static WarVariationThree testWarThree;
     private static ArrayList<Player> players;
     private static Player player1;
     private static Player player2;
@@ -18,16 +19,21 @@ public class TestWarVariationThree {
 
     @BeforeClass
     public static void setUp() {
-        testWarOne = new WarVariationThree();
+        testWarThree = new WarVariationThree();
+        players = new ArrayList<>();
+        testWarThree.player1 = new Player("Daniel", new Deck());
+        testWarThree.player2 = new Player("Hao", new Deck());
+        testWarThree.player3 = new Player("Rob", new Deck());
     }
+
 
     @Test
     public void testStartingNumberOfCards() {
         String[] playerNames = {"Daniel", "HAO", "Rob"};
-        testWarOne.setUpCardsAndPlayers(playerNames);
-        player1 = testWarOne.listOfPlayers.get(0);
-        player2 = testWarOne.listOfPlayers.get(1);
-        player3 = testWarOne.listOfPlayers.get(2);
+        testWarThree.setUpCardsAndPlayers(playerNames);
+        player1 = testWarThree.listOfPlayers.get(0);
+        player2 = testWarThree.listOfPlayers.get(1);
+        player3 = testWarThree.listOfPlayers.get(2);
 
         int expectedStartingPlayerHandSize = 17;
 
@@ -41,11 +47,19 @@ public class TestWarVariationThree {
         player1.getWinningsPile().addCard(new Card("DIAMONDS", "10", 10));
         player2.getWinningsPile().addCard(new Card("DIAMONDS", "5", 5));
 
-        String expectedWinners = "WINNERS: \nWinner is Daniel Hand: 0 Pile: 1\nWinner is HAO Hand: 0 Pile: 1\n";
-        System.out.println(expectedWinners);
-        System.out.println(testWarOne.checkWinner());
 
-        assertEquals(expectedWinners,testWarOne.checkWinner());
+        String expectedWinners = "WINNERS: \nWinner is Daniel Hand: 0 Pile: 1\nWinner is HAO Hand: 0 Pile: 1\n";
+        assertEquals(expectedWinners, testWarThree.checkWinner());
+    }
+
+    @Test
+    public void testTwoDuplicateLowCardsAndHighCardRoundWinner() {
+        testWarThree.player1.getPlayerHand().addCard(new Card("DIAMONDS", "5", 5));
+        testWarThree.player2.getPlayerHand().addCard(new Card("HEARTS", "5", 5));
+        testWarThree.player3.getPlayerHand().addCard(new Card("CLUBS", "7", 7));
+
+        int expectedWinnerID = 2;
+        assertEquals(expectedWinnerID, testWarThree.compareCards());
     }
 
 
@@ -57,5 +71,8 @@ public class TestWarVariationThree {
 
         player2.getPlayerHand().getDeck().clear();
         player2.getWinningsPile().getDeck().clear();
+
+        player3.getPlayerHand().getDeck().clear();
+        player3.getWinningsPile().getDeck().clear();
     }
 }

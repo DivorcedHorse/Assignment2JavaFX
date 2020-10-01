@@ -11,14 +11,14 @@ import org.junit.Test;
 import DeckBuilder.Card;
 
 public class TestWarVariationTwo {
-    private static WarVariationTwo testWarOne;
+    private static WarVariationTwo testWarTwo;
     private static ArrayList<Player> players;
     private static Player player1;
     private static Player player2;
 
     @BeforeClass
     public static void setUp() {
-        testWarOne = new WarVariationTwo();
+        testWarTwo = new WarVariationTwo();
         player1 = new Player("Daniel", new Deck());
         player2 = new Player("Hao", new Deck());
         players = new ArrayList<>();
@@ -28,7 +28,7 @@ public class TestWarVariationTwo {
 
     @Test
     public void testEmptyPlayerPointsPile() {
-        testWarOne.playGame(players);
+        testWarTwo.playGame(players);
 
         assertEquals(0, player1.getWinningsPileSize());
         assertEquals(0, player2.getWinningsPileSize());
@@ -38,33 +38,47 @@ public class TestWarVariationTwo {
     @Test
     public void testWinnersPlayerPointsPileSize() {
         player1.getPlayerHand().addCard(new Card("DIAMONDS", "10", 10));
-        player2.getPlayerHand().addCard(new Card("DIAMONDS", "5", 5));
         player1.getPlayerHand().addCard(new Card("DIAMONDS", "2", 2));
-        player2.getPlayerHand().addCard(new Card("DIAMONDS", "3", 3));
         player1.getPlayerHand().addCard(new Card("DIAMONDS", "8", 8));
+
+        player2.getPlayerHand().addCard(new Card("DIAMONDS", "5", 5));
+        player2.getPlayerHand().addCard(new Card("DIAMONDS", "3", 3));
         player2.getPlayerHand().addCard(new Card("DIAMONDS", "7", 7));
 
-        testWarOne.playGame(players);
+        testWarTwo.playGame(players);
         int expectedPlayerOnePoints = 4;
         int expectedPlayerTwoPoints = 2;
 
         assertEquals(expectedPlayerOnePoints, player1.getWinningsPileSize());
         assertEquals(expectedPlayerTwoPoints, player2.getWinningsPileSize());
+
+    }
+
+
+    @Test
+    public void testOverallWinnerOutPrint() {
+        player1.getPlayerHand().addCard(new Card("DIAMONDS", "10", 10));
+        player1.getPlayerHand().addCard(new Card("DIAMONDS", "2", 2));
+        player1.getPlayerHand().addCard(new Card("DIAMONDS", "8", 8));
+
+        player2.getPlayerHand().addCard(new Card("DIAMONDS", "5", 5));
+        player2.getPlayerHand().addCard(new Card("DIAMONDS", "3", 3));
+        player2.getPlayerHand().addCard(new Card("DIAMONDS", "7", 7));
+
+        testWarTwo.playGame(players);
+        String expectedWinnerString = "Winner is Daniel Hand: 0 Pile: 4";
+
+        assertEquals(expectedWinnerString, testWarTwo.checkWinner());
     }
 
     @Test
-    public void testOverallWinner() {
-        player1.getPlayerHand().addCard(new Card("DIAMONDS", "10", 10));
-        player2.getPlayerHand().addCard(new Card("DIAMONDS", "5", 5));
-        player1.getPlayerHand().addCard(new Card("DIAMONDS", "2", 2));
-        player2.getPlayerHand().addCard(new Card("DIAMONDS", "3", 3));
-        player1.getPlayerHand().addCard(new Card("DIAMONDS", "8", 8));
-        player2.getPlayerHand().addCard(new Card("DIAMONDS", "7", 7));
+    public void testCompareCardsTie() {
+        player1.getPlayerHand().addCard(new Card("DIAMONDS", "5", 5));
+        player2.getPlayerHand().addCard(new Card("CLUBS", "5", 5));
 
-        testWarOne.playGame(players);
-        String expectedWinnerString = "Winner is Daniel Hand: 0 Pile: 4";
+        int expectedResult = 2;
+        assertEquals(expectedResult, testWarTwo.compareCards());
 
-        assertEquals(expectedWinnerString, testWarOne.checkWinner());
     }
 
     @After
