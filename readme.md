@@ -11,6 +11,7 @@ and play another card.  Player with the highest card wins all the cards of that 
 * **Card.java**<br /><br />
       Purpose - **Domain model** that represents a single playing card.<br /><br />
       The Card class follows the **Single Responsibility Principle** as it simply represents a single playing card from a deck.  For a single Card, we store it's suit type, the         name of the card, and a rank value.<br /><br />
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       
 * **Deck.java**<br /><br />
       Purpose - **Domain model** that represents a playing deck that contains cards. <br /><br />
