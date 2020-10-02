@@ -26,6 +26,7 @@ public class GameSimulation {
 
         stringBuffer.append(warOneSimulation.playGame(warOneSimulation.listOfPlayers));
         stringBuffer.append(warOneSimulation.checkWinner());
+
         warOneSimulation.clearMiddleDeck();
 
         return stringBuffer.toString();
@@ -45,6 +46,8 @@ public class GameSimulation {
         stringBuffer.append(warTwoSimulation.playGame(warTwoSimulation.listOfPlayers));
         stringBuffer.append(warTwoSimulation.checkWinner());
 
+        warTwoSimulation.clearMiddleDeck();
+
         return stringBuffer.toString();
     }
 
@@ -61,6 +64,8 @@ public class GameSimulation {
 
         stringBuffer.append(warThreeSimulation.playGame(warThreeSimulation.listOfPlayers));
         stringBuffer.append(warThreeSimulation.checkWinner());
+
+        warThreeSimulation.clearMiddleDeck();
 
         return stringBuffer.toString();
     }

@@ -140,4 +140,8 @@ public class WarVariationThree extends GameVariation {
         }
         return winners;
     }
+
+    public void clearMiddleDeck() {
+        middleDeck.getDeck().clear();
+    }
 }

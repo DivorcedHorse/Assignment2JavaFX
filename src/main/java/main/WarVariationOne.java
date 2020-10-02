@@ -98,10 +98,6 @@ public class WarVariationOne extends GameVariation {
             return (player1.getPlayerName() + " has won!\n");
     }
 
-    /**
-     * Clears the middle deck after a game has
-     * ended.
-     */
     public void clearMiddleDeck() {
         middleDeck.getDeck().clear();
     }

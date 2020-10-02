@@ -105,4 +105,8 @@ public class WarVariationTwo extends GameVariation {
             return ("It's a tie!\n");
         }
     }
+
+    public void clearMiddleDeck() {
+        middleDeck.getDeck().clear();
+    }
 }

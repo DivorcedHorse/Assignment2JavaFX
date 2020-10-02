@@ -33,6 +33,7 @@ public class Dealer {
 
         HashMap<String, Deck> playerCards = createPlayerDecks();
 
+        // Gives each player one at a time a defined/evenly amount of cards
         while(!deck.checkIfDeckEmpty()) {
             if (givenCardCnt == numCardsPerPlayer) {
                 curPlayer++;
@@ -46,7 +47,6 @@ public class Dealer {
         }
         return playerCards;
     }
-
 
     private HashMap<String, Deck> createPlayerDecks() {
         HashMap<String, Deck> playerCards = new HashMap<String, Deck>();

@@ -39,7 +39,7 @@ public abstract class GameVariation {
         listOfPlayers = createPlayers(playerCards, playerNames);
     }
 
-    private ArrayList<Player> createPlayers(HashMap<String, Deck> playerDecks, String[] players){
+    private ArrayList<Player> createPlayers(HashMap<String, Deck> playerDecks, String[] players) {
         ArrayList<Player> listOfPlayers = new ArrayList<>();
 
         for (int i = 0; i < playerDecks.size(); i++) {
@@ -55,15 +55,14 @@ public abstract class GameVariation {
      * round playing and comparing cards.
      *
      * @param players - Players playing the game.
-     *
      * @return StringBuffer - StringBuffer that contains all
-     *                        events that occurred in a game.
+     * events that occurred in a game.
      */
     public abstract StringBuffer playGame(ArrayList<Player> players);
 
     /**
-     *  Determines who is overall winner of that variation
-     *  of WAR.
+     * Determines who is overall winner of that variation
+     * of WAR.
      *
      * @return String - String that contains winner.
      */
@@ -84,7 +83,7 @@ public abstract class GameVariation {
      * played card.
      *
      * @return int - Number indicating which player won
-     *               round (or tie)
+     * round (or tie)
      */
     public abstract int compareCards();
 
@@ -101,4 +100,10 @@ public abstract class GameVariation {
      * and players play a face down card.
      */
     public abstract void prepareForWAR();
-    }
+
+    /**
+     * After a game ends, clears middledeck to ensure
+     * no cards remain there if it ends in a tie.
+     */
+    public abstract void clearMiddleDeck();
+}

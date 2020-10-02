@@ -42,7 +42,6 @@ public class Player {
             playerHand.addCard(winningDeck.getTopCard());
         }
 
-
         // now can add the cards back into players hand
         while (!tmp.checkIfDeckEmpty()) {
             playerHand.addCard(tmp.getTopCard());
