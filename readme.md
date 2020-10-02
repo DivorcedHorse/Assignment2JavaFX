@@ -18,7 +18,7 @@ and play another card.  Player with the highest card wins all the cards of that 
 
 * **DeckCreator.java**<br /><br />
       Purpose - Builder class that creates and initializes standard playing deck.<br /><br />
-      The DeckCreator class follows the **Pure Fabrication** as it implements the methods of actually creating a deck of cards.  Rather than having the Deck class do the work,           DeckCreator takes responbility allows the Deck class to be cleaner and simpler.  <br /><br />
+      The DeckCreator class follows the **Pure Fabrication** as it implements the methods of actually creating a deck of cards.  Rather than having the Deck class do the work,           DeckCreator takes responbility which allows the Deck class to be cleaner and simpler.  <br /><br />
       
 * **Player.java**<br /><br />
       Purpose - **Domain model** that represents a person playing the WAR variations.  Player will keep track of their own hands and points pile.<br /><br />
