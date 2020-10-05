@@ -6,26 +6,29 @@ with the player who played the highest value card for that round.  If two player
 play a card of the same value, a WAR occurs.  Players then play a face down card,
 and play another card.  Player with the highest card wins all the cards of that round. <br /><br />
 
-## Object Oriented Principles Used
-      Domain Models Used: 
-      Card
-      Deck
-      Player
-      Dealer
-      
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      SOLID Principles Used:
-      Single Responsiblity Principle - Card.java , Deck.java     
-      Open-Closed Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java
-      Liskov Substitution Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java
-      
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      GRASP Principles Used:
-      Pure Fabrication - DeckCreator.java
-      Polymorphism - GameVariation.java
-      Controller - GameController.java
+## PrevewTest
+Domain Models:<br /><br />
+Card<br />
+Deck<br />
+Player<br />
+Dealer<br />
 
-## Classes 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**SOLID Principles Used:**<br /><br />
+Single Responsiblity Principle - Card.java , Deck.java<br/>
+Open-Closed Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java<br/>
+Liskov Substitution Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java<br/>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**GRASP Principles Used:**<br /><br />
+Pure Fabrication - DeckCreator.java<br />
+Controller - GameController.java <br />
+Polymorphism - GameVariation.java<br />
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### Classes 
 
 * **Card.java**<br /><br />
       Purpose - **Domain model** that represents a single playing card.<br /><br />
@@ -41,8 +44,6 @@ and play another card.  Player with the highest card wins all the cards of that 
       Purpose - Builder class that creates and initializes standard playing deck.<br /><br />
       The DeckCreator class follows the **Pure Fabrication** as it implements the methods of actually creating a deck of cards.  Rather than having the Deck class do the work,           DeckCreator takes responbility which allows the Deck class to be cleaner and simpler.  <br /><br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      
-      
       
 * **Player.java**<br /><br />
       Purpose - **Domain model** that represents a person playing the WAR variations.  Player will keep track of their own hands and points pile.<br /><br />
