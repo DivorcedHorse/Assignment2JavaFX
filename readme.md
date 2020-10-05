@@ -4,7 +4,29 @@ WAR is a two-player (and three-player) card game where players play in rounds
 dealing cards from their personal hand until they run out of cards.  A round is won
 with the player who played the highest value card for that round.  If two players
 play a card of the same value, a WAR occurs.  Players then play a face down card,
-and play another card.  Player with the highest card wins all the cards of that round.
+and play another card.  Player with the highest card wins all the cards of that round. <br /><br />
+
+## Preview
+
+**Domain Models:**<br /><br />
+Card
+Deck
+Player
+Dealer
+Three different WAR variations <br /><br />
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**SOLID Principles Used:**<br /><br />
+Single Responsiblity Principle - Card.java , Deck.java
+Open-Closed Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java
+Liskov Substitution Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java
+<br /><br />
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**GRASP Principles Used:**<br /><br />
+Pure Fabrication - DeckCreator.java
+Polymorphism - GameVariation.java
+Controller - GameController.java
+<br /><br />
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Classes
 
