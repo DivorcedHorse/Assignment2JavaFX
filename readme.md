@@ -6,7 +6,7 @@ with the player who played the highest value card for that round.  If two player
 play a card of the same value, a WAR occurs.  Players then play a face down card,
 and play another card.  Player with the highest card wins all the cards of that round. <br /><br />
 
-## PrevewTest
+## Object Oriented principles implemented: 
 Domain Models:<br /><br />
 Card<br />
 Deck<br />
