@@ -27,8 +27,7 @@ Polymorphism - GameVariation.java
 Controller - GameController.java
 <br /><br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Classes
+Classes
 
 * **Card.java**<br /><br />
       Purpose - **Domain model** that represents a single playing card.<br /><br />
