@@ -6,28 +6,29 @@ with the player who played the highest value card for that round.  If two player
 play a card of the same value, a WAR occurs.  Players then play a face down card,
 and play another card.  Player with the highest card wins all the cards of that round. <br /><br />
 
-## Preview
-
-**Domain Models:**<br /><br />
-Card
-Deck
-Player
-Dealer
-Three different WAR variations <br /><br />
+## PrevewTest
+Domain Models:<br /><br />
+Card<br />
+Deck<br />
+Player<br />
+Dealer<br />
+Th
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **SOLID Principles Used:**<br /><br />
-Single Responsiblity Principle - Card.java , Deck.java
-Open-Closed Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java
-Liskov Substitution Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java
-<br /><br />
+Single Responsiblity Principle - Card.java , Deck.java<br />
+Open-Closed Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java<br />
+Liskov Substitution Principle - WarVariationOne.java , WarVariationTwo.java , WarVariationThree.java<br />
+<br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **GRASP Principles Used:**<br /><br />
-Pure Fabrication - DeckCreator.java
-Polymorphism - GameVariation.java
-Controller - GameController.java
-<br /><br />
+Pure Fabrication - DeckCreator.java<br />
+Polymorphism - GameVariation.java<br />
+Controller - GameController.java<br />
+<br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Classes
+
+
+### Classes 
 
 * **Card.java**<br /><br />
       Purpose - **Domain model** that represents a single playing card.<br /><br />
